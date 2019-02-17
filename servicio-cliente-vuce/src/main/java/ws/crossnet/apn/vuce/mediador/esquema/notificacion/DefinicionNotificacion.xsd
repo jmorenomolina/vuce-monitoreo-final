@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="Notificacion-1.0"
+	targetNamespace="Notificacion-1.0" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="2.0">
+	<xsd:element name="notificacion" type="NotificacionType" />
+	<xsd:element name="documento" type="DocumentoType" />
+	<xsd:element name="documentoReferencia" type="DocumentoReferenciaType" />
+	<xsd:element name="errores" type="ErroresType" />
+
+	<xsd:complexType name="NotificacionType">
+		<xsd:sequence>
+			<xsd:element name="numeroNotificacion" type="xs:int" />
+			<xsd:element name="tipoMensaje" type="xs:string" />
+			<xsd:element name="entidad" type="xs:int" />
+			<xsd:element name="documento" type="DocumentoType" />
+			<xsd:element name="documentoReferencia" type="DocumentoReferenciaType" />
+			<xsd:element name="texto" type="xs:string" />
+			<xsd:element name="errores" type="ErroresType" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DocumentoType">
+		<xsd:sequence>
+			<xsd:element name="tipo" type="xs:string" />
+			<xsd:element name="numero" type="xs:string" />
+			<xsd:element name="tasa" type="xs:double" />
+			<xsd:element name="plazo" type="xs:int" minOccurs="0" />
+			<xsd:element name="tipoDR" type="xs:string" minOccurs="0" />
+			<xsd:element name="categoriaDR" type="xs:string"
+				minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DocumentoReferenciaType">
+		<xsd:sequence>
+			<xsd:element name="tipo" type="xs:string" />
+			<xsd:element name="numero" type="xs:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ErroresType">
+		<xsd:sequence>
+			<xsd:element name="error" type="xs:string" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
+
+

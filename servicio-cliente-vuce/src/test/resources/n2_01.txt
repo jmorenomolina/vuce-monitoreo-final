@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notificacion xsi:schemaLocation="Notificacion-1.0 Notificacion-1.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="Notificacion-1.0">
+  <numeroNotificacion>849622</numeroNotificacion>
+  <tipoMensaje>N2</tipoMensaje>
+  <entidad>75</entidad>
+  <documento>
+    <tipo>O</tipo>
+    <numero>2017004531</numero>
+    <tasa>100.00</tasa>
+  </documento>
+  <documentoReferencia>
+    <tipo/>
+    <numero/>
+  </documentoReferencia>
+  <texto>
+</texto>
+  <errores/>
+</notificacion>

@@ -1,0 +1,493 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://cxf.apache.org/bindings/xformat"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">
+	<wsdl:types>
+		<xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			attributeFormDefault="unqualified" elementFormDefault="unqualified"
+			targetNamespace="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/"
+			version="1.0">
+			<xsd:element name="confirmarRecepcionMensaje" type="tns:confirmarRecepcionMensaje" />
+			<xsd:element name="confirmarRecepcionMensajeResponse"
+				type="tns:confirmarRecepcionMensajeResponse" />
+			<xsd:element name="enviarNotificaciones" type="tns:enviarNotificaciones" />
+			<xsd:element name="enviarNotificacionesResponse" type="tns:enviarNotificacionesResponse" />
+			<xsd:element name="obtenerErroresEnvioTransmisiones"
+				type="tns:obtenerErroresEnvioTransmisiones" />
+			<xsd:element name="obtenerErroresEnvioTransmisionesResponse"
+				type="tns:obtenerErroresEnvioTransmisionesResponse" />
+			<xsd:element name="obtenerLiquidacionPagos" type="tns:obtenerLiquidacionPagos" />
+			<xsd:element name="obtenerLiquidacionPagosResponse" type="tns:obtenerLiquidacionPagosResponse" />
+			<xsd:element name="obtenerResultadoSincronizacionTablas"
+				type="tns:obtenerResultadoSincronizacionTablas" />
+			<xsd:element name="obtenerResultadoSincronizacionTablasResponse"
+				type="tns:obtenerResultadoSincronizacionTablasResponse" />
+			<xsd:element name="obtenerTransaccionesPendientes" type="tns:obtenerTransaccionesPendientes" />
+			<xsd:element name="obtenerTransaccionesPendientesConLimite"
+				type="tns:obtenerTransaccionesPendientesConLimite" />
+			<xsd:element name="obtenerTransaccionesPendientesConLimiteResponse"
+				type="tns:obtenerTransaccionesPendientesConLimiteResponse" />
+			<xsd:element name="obtenerTransaccionesPendientesResponse"
+				type="tns:obtenerTransaccionesPendientesResponse" />
+			<xsd:element name="sincronizarTablas" type="tns:sincronizarTablas" />
+			<xsd:element name="sincronizarTablasResponse" type="tns:sincronizarTablasResponse" />
+			<xsd:complexType name="obtenerLiquidacionPagos">
+				<xsd:sequence>
+					<xsd:element name="idEntidad" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerLiquidacionPagosResponse">
+				<xsd:sequence>
+					<xsd:element xmlns:ns1="http://www.w3.org/2005/05/xmlmime"
+						maxOccurs="unbounded" minOccurs="0" name="return"
+						ns1:expectedContentTypes="application/octet-stream" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="sincronizarTablas">
+				<xsd:sequence>
+					<xsd:element name="idEntidad" type="xsd:int" />
+					<xsd:element xmlns:ns2="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="xmlMensaje" ns2:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+					<xsd:element xmlns:ns3="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="xmlTablas" ns3:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="sincronizarTablasResponse">
+				<xsd:sequence>
+					<xsd:element name="return" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerResultadoSincronizacionTablas">
+				<xsd:sequence>
+					<xsd:element name="idEntidad" type="xsd:int" />
+					<xsd:element name="idProcesoSincronizacion" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerResultadoSincronizacionTablasResponse">
+				<xsd:sequence>
+					<xsd:element xmlns:ns4="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="return" ns4:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerTransaccionesPendientesConLimite">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="idEntidad" type="xsd:int" />
+					<xsd:element maxOccurs="unbounded" minOccurs="0"
+						name="tipoTransacciones" type="xsd:string" />
+					<xsd:element minOccurs="0" name="limite" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerTransaccionesPendientesConLimiteResponse">
+				<xsd:sequence>
+					<xsd:element xmlns:ns5="http://www.w3.org/2005/05/xmlmime"
+						maxOccurs="unbounded" minOccurs="0" name="return"
+						ns5:expectedContentTypes="application/octet-stream" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerTransaccionesPendientes">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="idEntidad" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerTransaccionesPendientesResponse">
+				<xsd:sequence>
+					<xsd:element xmlns:ns6="http://www.w3.org/2005/05/xmlmime"
+						maxOccurs="unbounded" minOccurs="0" name="return"
+						ns6:expectedContentTypes="application/octet-stream" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarRecepcionMensaje">
+				<xsd:sequence>
+					<xsd:element name="idTransaccion" type="xsd:int" />
+					<xsd:element name="error" type="xsd:int" />
+					<xsd:element minOccurs="0" name="errores" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="confirmarRecepcionMensajeResponse">
+				<xsd:sequence />
+			</xsd:complexType>
+			<xsd:complexType name="obtenerErroresEnvioTransmisiones">
+				<xsd:sequence>
+					<xsd:element name="idEntidad" type="xsd:int" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="obtenerErroresEnvioTransmisionesResponse">
+				<xsd:sequence>
+					<xsd:element xmlns:ns7="http://www.w3.org/2005/05/xmlmime"
+						maxOccurs="unbounded" minOccurs="0" name="return"
+						ns7:expectedContentTypes="application/octet-stream" type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="enviarNotificaciones">
+				<xsd:sequence>
+					<xsd:element xmlns:ns8="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="xmlNotificacion" ns8:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+					<xsd:element xmlns:ns9="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="ebXML" ns9:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+					<xsd:element xmlns:ns10="http://www.w3.org/2005/05/xmlmime"
+						minOccurs="0" name="adjuntos" ns10:expectedContentTypes="application/octet-stream"
+						type="xsd:base64Binary" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="enviarNotificacionesResponse">
+				<xsd:sequence />
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="sincronizarTablas">
+		<wsdl:part name="parameters" element="tns:sincronizarTablas" />
+	</wsdl:message>
+	<wsdl:message name="sincronizarTablasResponse">
+		<wsdl:part name="parameters" element="tns:sincronizarTablasResponse" />
+	</wsdl:message>
+	<wsdl:message name="obtenerTransaccionesPendientesConLimite">
+		<wsdl:part name="parameters"
+			element="tns:obtenerTransaccionesPendientesConLimite" />
+	</wsdl:message>
+	<wsdl:message name="obtenerTransaccionesPendientesConLimiteResponse">
+		<wsdl:part name="parameters"
+			element="tns:obtenerTransaccionesPendientesConLimiteResponse" />
+	</wsdl:message>
+	<wsdl:message name="obtenerTransaccionesPendientes">
+		<wsdl:part name="parameters" element="tns:obtenerTransaccionesPendientes" />
+	</wsdl:message>
+	<wsdl:message name="obtenerTransaccionesPendientesResponse">
+		<wsdl:part name="parameters" element="tns:obtenerTransaccionesPendientesResponse" />
+	</wsdl:message>
+	<wsdl:message name="obtenerErroresEnvioTransmisiones">
+		<wsdl:part name="parameters" element="tns:obtenerErroresEnvioTransmisiones" />
+	</wsdl:message>
+	<wsdl:message name="obtenerErroresEnvioTransmisionesResponse">
+		<wsdl:part name="parameters"
+			element="tns:obtenerErroresEnvioTransmisionesResponse" />
+	</wsdl:message>
+	<wsdl:message name="enviarNotificaciones">
+		<wsdl:part name="parameters" element="tns:enviarNotificaciones" />
+	</wsdl:message>
+	<wsdl:message name="enviarNotificacionesResponse">
+		<wsdl:part name="parameters" element="tns:enviarNotificacionesResponse" />
+	</wsdl:message>
+	<wsdl:message name="confirmarRecepcionMensaje">
+		<wsdl:part name="parameters" element="tns:confirmarRecepcionMensaje" />
+	</wsdl:message>
+	<wsdl:message name="confirmarRecepcionMensajeResponse">
+		<wsdl:part name="parameters" element="tns:confirmarRecepcionMensajeResponse" />
+	</wsdl:message>
+	<wsdl:message name="obtenerLiquidacionPagos">
+		<wsdl:part name="parameters" element="tns:obtenerLiquidacionPagos" />
+	</wsdl:message>
+	<wsdl:message name="obtenerLiquidacionPagosResponse">
+		<wsdl:part name="parameters" element="tns:obtenerLiquidacionPagosResponse" />
+	</wsdl:message>
+	<wsdl:message name="obtenerResultadoSincronizacionTablas">
+		<wsdl:part name="parameters" element="tns:obtenerResultadoSincronizacionTablas" />
+	</wsdl:message>
+	<wsdl:message name="obtenerResultadoSincronizacionTablasResponse">
+		<wsdl:part name="parameters"
+			element="tns:obtenerResultadoSincronizacionTablasResponse" />
+	</wsdl:message>
+	<wsdl:portType name="VucentWSPortType">
+		<wsdl:operation name="sincronizarTablas">
+			<wsdl:input message="tns:sincronizarTablas" wsaw:Action="urn:sincronizarTablas" />
+			<wsdl:output message="tns:sincronizarTablasResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/sincronizarTablasResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+			<wsdl:input message="tns:obtenerTransaccionesPendientesConLimite"
+				wsaw:Action="urn:obtenerTransaccionesPendientesConLimite" />
+			<wsdl:output message="tns:obtenerTransaccionesPendientesConLimiteResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/obtenerTransaccionesPendientesConLimiteResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientes">
+			<wsdl:input message="tns:obtenerTransaccionesPendientes"
+				wsaw:Action="urn:obtenerTransaccionesPendientes" />
+			<wsdl:output message="tns:obtenerTransaccionesPendientesResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/obtenerTransaccionesPendientesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerErroresEnvioTransmisiones">
+			<wsdl:input message="tns:obtenerErroresEnvioTransmisiones"
+				wsaw:Action="urn:obtenerErroresEnvioTransmisiones" />
+			<wsdl:output message="tns:obtenerErroresEnvioTransmisionesResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/obtenerErroresEnvioTransmisionesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="enviarNotificaciones">
+			<wsdl:input message="tns:enviarNotificaciones"
+				wsaw:Action="urn:enviarNotificaciones" />
+			<wsdl:output message="tns:enviarNotificacionesResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/enviarNotificacionesResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="confirmarRecepcionMensaje">
+			<wsdl:input message="tns:confirmarRecepcionMensaje"
+				wsaw:Action="urn:confirmarRecepcionMensaje" />
+			<wsdl:output message="tns:confirmarRecepcionMensajeResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/confirmarRecepcionMensajeResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerLiquidacionPagos">
+			<wsdl:input message="tns:obtenerLiquidacionPagos"
+				wsaw:Action="urn:obtenerLiquidacionPagos" />
+			<wsdl:output message="tns:obtenerLiquidacionPagosResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/obtenerLiquidacionPagosResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="obtenerResultadoSincronizacionTablas">
+			<wsdl:input message="tns:obtenerResultadoSincronizacionTablas"
+				wsaw:Action="urn:obtenerResultadoSincronizacionTablas" />
+			<wsdl:output message="tns:obtenerResultadoSincronizacionTablasResponse"
+				wsaw:Action="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/VucentWS/obtenerResultadoSincronizacionTablasResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="VucentWSSoap11Binding" type="tns:VucentWSPortType">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="sincronizarTablas">
+			<soap:operation soapAction="urn:sincronizarTablas"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+			<soap:operation soapAction="urn:obtenerTransaccionesPendientesConLimite"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientes">
+			<soap:operation soapAction="urn:obtenerTransaccionesPendientes"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerErroresEnvioTransmisiones">
+			<soap:operation soapAction="urn:obtenerErroresEnvioTransmisiones"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enviarNotificaciones">
+			<soap:operation soapAction="urn:enviarNotificaciones"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="confirmarRecepcionMensaje">
+			<soap:operation soapAction="urn:confirmarRecepcionMensaje"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerLiquidacionPagos">
+			<soap:operation soapAction="urn:obtenerLiquidacionPagos"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerResultadoSincronizacionTablas">
+			<soap:operation soapAction="urn:obtenerResultadoSincronizacionTablas"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="VucentWSSoap12Binding" type="tns:VucentWSPortType">
+		<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="sincronizarTablas">
+			<soap12:operation soapAction="urn:sincronizarTablas"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+			<soap12:operation soapAction="urn:obtenerTransaccionesPendientesConLimite"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientes">
+			<soap12:operation soapAction="urn:obtenerTransaccionesPendientes"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerErroresEnvioTransmisiones">
+			<soap12:operation soapAction="urn:obtenerErroresEnvioTransmisiones"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enviarNotificaciones">
+			<soap12:operation soapAction="urn:enviarNotificaciones"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="confirmarRecepcionMensaje">
+			<soap12:operation soapAction="urn:confirmarRecepcionMensaje"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerLiquidacionPagos">
+			<soap12:operation soapAction="urn:obtenerLiquidacionPagos"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerResultadoSincronizacionTablas">
+			<soap12:operation soapAction="urn:obtenerResultadoSincronizacionTablas"
+				style="document" />
+			<wsdl:input>
+				<soap12:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap12:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="VucentWSHttpBinding" type="tns:VucentWSPortType">
+		<http:binding verb="POST" />
+		<wsdl:operation name="sincronizarTablas">
+			<http:operation location="sincronizarTablas" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+			<http:operation location="obtenerTransaccionesPendientesConLimite" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerTransaccionesPendientes">
+			<http:operation location="obtenerTransaccionesPendientes" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerErroresEnvioTransmisiones">
+			<http:operation location="obtenerErroresEnvioTransmisiones" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="enviarNotificaciones">
+			<http:operation location="enviarNotificaciones" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="confirmarRecepcionMensaje">
+			<http:operation location="confirmarRecepcionMensaje" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerLiquidacionPagos">
+			<http:operation location="obtenerLiquidacionPagos" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="obtenerResultadoSincronizacionTablas">
+			<http:operation location="obtenerResultadoSincronizacionTablas" />
+			<wsdl:input>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:input>
+			<wsdl:output>
+				<mime:content type="text/xml" part="parameters" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="VucentWS">
+		<wsdl:port name="VucentWSHttpSoap11Endpoint" binding="tns:VucentWSSoap11Binding">
+			<soap:address location="http://Lenovo-PC:8280/services/proxy_vuce.proxy_vuceHttpSoap11Endpoint" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

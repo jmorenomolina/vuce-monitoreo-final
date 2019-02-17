@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="53dda0ce-6dc3-4b1e-8c65-8dc965470bef" activeEnvironment="Default" name="PruebaServicioVUCE" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0d8ec585-a2a4-45a5-9ee5-665f7522f480" wsaVersion="NONE" name="VucentWSImplServiceSoapBinding" type="wsdl" bindingName="{http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/}VucentWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://200.62.224.217/vucent/services/VucentWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://200.62.224.217/vucent/services/VucentWS?wsdl"><con:part><con:url>http://200.62.224.217/vucent/services/VucentWS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="VucentWSImplService" targetNamespace="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="confirmarRecepcionMensaje" type="tns:confirmarRecepcionMensaje"/>
+      <xs:element name="confirmarRecepcionMensajeResponse" type="tns:confirmarRecepcionMensajeResponse"/>
+      <xs:element name="enviarNotificaciones" type="tns:enviarNotificaciones"/>
+      <xs:element name="enviarNotificacionesResponse" type="tns:enviarNotificacionesResponse"/>
+      <xs:element name="obtenerErroresEnvioTransmisiones" type="tns:obtenerErroresEnvioTransmisiones"/>
+      <xs:element name="obtenerErroresEnvioTransmisionesResponse" type="tns:obtenerErroresEnvioTransmisionesResponse"/>
+      <xs:element name="obtenerLiquidacionPagos" type="tns:obtenerLiquidacionPagos"/>
+      <xs:element name="obtenerLiquidacionPagosResponse" type="tns:obtenerLiquidacionPagosResponse"/>
+      <xs:element name="obtenerResultadoSincronizacionTablas" type="tns:obtenerResultadoSincronizacionTablas"/>
+      <xs:element name="obtenerResultadoSincronizacionTablasResponse" type="tns:obtenerResultadoSincronizacionTablasResponse"/>
+      <xs:element name="obtenerTransaccionesPendientes" type="tns:obtenerTransaccionesPendientes"/>
+      <xs:element name="obtenerTransaccionesPendientesConLimite" type="tns:obtenerTransaccionesPendientesConLimite"/>
+      <xs:element name="obtenerTransaccionesPendientesConLimiteResponse" type="tns:obtenerTransaccionesPendientesConLimiteResponse"/>
+      <xs:element name="obtenerTransaccionesPendientesResponse" type="tns:obtenerTransaccionesPendientesResponse"/>
+      <xs:element name="sincronizarTablas" type="tns:sincronizarTablas"/>
+      <xs:element name="sincronizarTablasResponse" type="tns:sincronizarTablasResponse"/>
+      <xs:complexType name="obtenerLiquidacionPagos">
+        <xs:sequence>
+          <xs:element name="idEntidad" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerLiquidacionPagosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sincronizarTablas">
+        <xs:sequence>
+          <xs:element name="idEntidad" type="xs:int"/>
+          <xs:element minOccurs="0" name="xmlMensaje" ns2:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns2="http://www.w3.org/2005/05/xmlmime"/>
+          <xs:element minOccurs="0" name="xmlTablas" ns3:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns3="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sincronizarTablasResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerResultadoSincronizacionTablas">
+        <xs:sequence>
+          <xs:element name="idEntidad" type="xs:int"/>
+          <xs:element name="idProcesoSincronizacion" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerResultadoSincronizacionTablasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" ns4:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns4="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerTransaccionesPendientesConLimite">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idEntidad" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="tipoTransacciones" type="xs:string"/>
+          <xs:element minOccurs="0" name="limite" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerTransaccionesPendientesConLimiteResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" ns5:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns5="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerTransaccionesPendientes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="idEntidad" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerTransaccionesPendientesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" ns6:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns6="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="confirmarRecepcionMensaje">
+        <xs:sequence>
+          <xs:element name="idTransaccion" type="xs:int"/>
+          <xs:element name="error" type="xs:int"/>
+          <xs:element minOccurs="0" name="errores" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="confirmarRecepcionMensajeResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="obtenerErroresEnvioTransmisiones">
+        <xs:sequence>
+          <xs:element name="idEntidad" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerErroresEnvioTransmisionesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" ns7:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns7="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarNotificaciones">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xmlNotificacion" ns8:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns8="http://www.w3.org/2005/05/xmlmime"/>
+          <xs:element minOccurs="0" name="ebXML" ns9:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns9="http://www.w3.org/2005/05/xmlmime"/>
+          <xs:element minOccurs="0" name="adjuntos" ns10:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns10="http://www.w3.org/2005/05/xmlmime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarNotificacionesResponse">
+        <xs:sequence/>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerErroresEnvioTransmisionesResponse">
+    <wsdl:part element="tns:obtenerErroresEnvioTransmisionesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerTransaccionesPendientes">
+    <wsdl:part element="tns:obtenerTransaccionesPendientes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerLiquidacionPagos">
+    <wsdl:part element="tns:obtenerLiquidacionPagos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarNotificaciones">
+    <wsdl:part element="tns:enviarNotificaciones" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sincronizarTablas">
+    <wsdl:part element="tns:sincronizarTablas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sincronizarTablasResponse">
+    <wsdl:part element="tns:sincronizarTablasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerErroresEnvioTransmisiones">
+    <wsdl:part element="tns:obtenerErroresEnvioTransmisiones" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarNotificacionesResponse">
+    <wsdl:part element="tns:enviarNotificacionesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerResultadoSincronizacionTablasResponse">
+    <wsdl:part element="tns:obtenerResultadoSincronizacionTablasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerTransaccionesPendientesResponse">
+    <wsdl:part element="tns:obtenerTransaccionesPendientesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerTransaccionesPendientesConLimiteResponse">
+    <wsdl:part element="tns:obtenerTransaccionesPendientesConLimiteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarRecepcionMensaje">
+    <wsdl:part element="tns:confirmarRecepcionMensaje" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerTransaccionesPendientesConLimite">
+    <wsdl:part element="tns:obtenerTransaccionesPendientesConLimite" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerLiquidacionPagosResponse">
+    <wsdl:part element="tns:obtenerLiquidacionPagosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarRecepcionMensajeResponse">
+    <wsdl:part element="tns:confirmarRecepcionMensajeResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obtenerResultadoSincronizacionTablas">
+    <wsdl:part element="tns:obtenerResultadoSincronizacionTablas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VucentWS">
+    <wsdl:operation name="obtenerLiquidacionPagos">
+      <wsdl:input message="tns:obtenerLiquidacionPagos" name="obtenerLiquidacionPagos"></wsdl:input>
+      <wsdl:output message="tns:obtenerLiquidacionPagosResponse" name="obtenerLiquidacionPagosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sincronizarTablas">
+      <wsdl:input message="tns:sincronizarTablas" name="sincronizarTablas"></wsdl:input>
+      <wsdl:output message="tns:sincronizarTablasResponse" name="sincronizarTablasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerResultadoSincronizacionTablas">
+      <wsdl:input message="tns:obtenerResultadoSincronizacionTablas" name="obtenerResultadoSincronizacionTablas"></wsdl:input>
+      <wsdl:output message="tns:obtenerResultadoSincronizacionTablasResponse" name="obtenerResultadoSincronizacionTablasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+      <wsdl:input message="tns:obtenerTransaccionesPendientesConLimite" name="obtenerTransaccionesPendientesConLimite"></wsdl:input>
+      <wsdl:output message="tns:obtenerTransaccionesPendientesConLimiteResponse" name="obtenerTransaccionesPendientesConLimiteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTransaccionesPendientes">
+      <wsdl:input message="tns:obtenerTransaccionesPendientes" name="obtenerTransaccionesPendientes"></wsdl:input>
+      <wsdl:output message="tns:obtenerTransaccionesPendientesResponse" name="obtenerTransaccionesPendientesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarRecepcionMensaje">
+      <wsdl:input message="tns:confirmarRecepcionMensaje" name="confirmarRecepcionMensaje"></wsdl:input>
+      <wsdl:output message="tns:confirmarRecepcionMensajeResponse" name="confirmarRecepcionMensajeResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerErroresEnvioTransmisiones">
+      <wsdl:input message="tns:obtenerErroresEnvioTransmisiones" name="obtenerErroresEnvioTransmisiones"></wsdl:input>
+      <wsdl:output message="tns:obtenerErroresEnvioTransmisionesResponse" name="obtenerErroresEnvioTransmisionesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarNotificaciones">
+      <wsdl:input message="tns:enviarNotificaciones" name="enviarNotificaciones"></wsdl:input>
+      <wsdl:output message="tns:enviarNotificacionesResponse" name="enviarNotificacionesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VucentWSImplServiceSoapBinding" type="tns:VucentWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="obtenerLiquidacionPagos">
+      <soap:operation soapAction="urn:obtenerLiquidacionPagos" style="document"/>
+      <wsdl:input name="obtenerLiquidacionPagos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerLiquidacionPagosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sincronizarTablas">
+      <soap:operation soapAction="urn:sincronizarTablas" style="document"/>
+      <wsdl:input name="sincronizarTablas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sincronizarTablasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerResultadoSincronizacionTablas">
+      <soap:operation soapAction="urn:obtenerResultadoSincronizacionTablas" style="document"/>
+      <wsdl:input name="obtenerResultadoSincronizacionTablas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerResultadoSincronizacionTablasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTransaccionesPendientesConLimite">
+      <soap:operation soapAction="urn:obtenerTransaccionesPendientesConLimite" style="document"/>
+      <wsdl:input name="obtenerTransaccionesPendientesConLimite">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerTransaccionesPendientesConLimiteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarRecepcionMensaje">
+      <soap:operation soapAction="urn:confirmarRecepcionMensaje" style="document"/>
+      <wsdl:input name="confirmarRecepcionMensaje">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="confirmarRecepcionMensajeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerTransaccionesPendientes">
+      <soap:operation soapAction="urn:obtenerTransaccionesPendientes" style="document"/>
+      <wsdl:input name="obtenerTransaccionesPendientes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerTransaccionesPendientesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarNotificaciones">
+      <soap:operation soapAction="urn:enviarNotificaciones" style="document"/>
+      <wsdl:input name="enviarNotificaciones">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarNotificacionesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerErroresEnvioTransmisiones">
+      <soap:operation soapAction="urn:obtenerErroresEnvioTransmisiones" style="document"/>
+      <wsdl:input name="obtenerErroresEnvioTransmisiones">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obtenerErroresEnvioTransmisionesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VucentWSImplService">
+    <wsdl:port binding="tns:VucentWSImplServiceSoapBinding" name="VucentWSImplPort">
+      <soap:address location="http://200.62.224.217/vucent/services/VucentWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint></con:endpoints><con:operation id="d0a3b48a-008d-4838-a48e-191af941daf8" isOneWay="false" action="urn:confirmarRecepcionMensaje" name="confirmarRecepcionMensaje" bindingOperationName="confirmarRecepcionMensaje" type="Request-Response" outputName="confirmarRecepcionMensajeResponse" inputName="confirmarRecepcionMensaje" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9bd38e94-1a6e-44c7-a54f-40bc1fa37582" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:header scope="default">
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-1">
+            <wsse:Username>WSAPN</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">M0ZBQkJFRjktQUUwQi00NEY2LUEzMDEtMUY4NDBCMzIwRjM2tY8YW2wBPdKyEYkwGDlAmSw+8kU=</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:header>
+   <soapenv:Body>\r
+      <ent:confirmarRecepcionMensaje>\r
+         <idTransaccion>8825928</idTransaccion>\r
+         <error>?</error>\r
+         <!--Optional:-->\r
+         <errores>?</errores>\r
+      </ent:confirmarRecepcionMensaje>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:confirmarRecepcionMensaje"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9db2fb7c-d667-4529-b914-10d77a3eda38" isOneWay="false" action="urn:enviarNotificaciones" name="enviarNotificaciones" bindingOperationName="enviarNotificaciones" type="Request-Response" outputName="enviarNotificacionesResponse" inputName="enviarNotificaciones" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="551c468a-153f-4623-b9f7-e2dd26ac7ac2" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ent:enviarNotificaciones>\r
+         <!--Optional:-->\r
+         <xmlNotificacion>cid:756427076882</xmlNotificacion>\r
+         <!--Optional:-->\r
+         <ebXML>cid:138767161640</ebXML>\r
+         <!--Optional:-->\r
+         <adjuntos>cid:1050560973917</adjuntos>\r
+      </ent:enviarNotificaciones>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:enviarNotificaciones"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="22c36b2c-4266-4527-b6ff-e7c5bc356d60" isOneWay="false" action="urn:obtenerErroresEnvioTransmisiones" name="obtenerErroresEnvioTransmisiones" bindingOperationName="obtenerErroresEnvioTransmisiones" type="Request-Response" outputName="obtenerErroresEnvioTransmisionesResponse" inputName="obtenerErroresEnvioTransmisiones" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="41aca5d1-d8ee-47ee-9395-530dcecb93e0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ent:obtenerErroresEnvioTransmisiones>\r
+         <idEntidad>?</idEntidad>\r
+      </ent:obtenerErroresEnvioTransmisiones>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:obtenerErroresEnvioTransmisiones"/></con:call></con:operation><con:operation id="63105212-981f-479c-beda-6c393625b419" isOneWay="false" action="urn:obtenerLiquidacionPagos" name="obtenerLiquidacionPagos" bindingOperationName="obtenerLiquidacionPagos" type="Request-Response" outputName="obtenerLiquidacionPagosResponse" inputName="obtenerLiquidacionPagos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9cf7e043-4cca-486b-aa1e-d55d2d84b41c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ent:obtenerLiquidacionPagos>\r
+         <idEntidad>?</idEntidad>\r
+      </ent:obtenerLiquidacionPagos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:obtenerLiquidacionPagos"/></con:call></con:operation><con:operation id="dace5f19-8426-48d7-9d0e-a47ac647ac18" isOneWay="false" action="urn:obtenerResultadoSincronizacionTablas" name="obtenerResultadoSincronizacionTablas" bindingOperationName="obtenerResultadoSincronizacionTablas" type="Request-Response" outputName="obtenerResultadoSincronizacionTablasResponse" inputName="obtenerResultadoSincronizacionTablas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f10a2114-20ef-4ca3-8431-e28f849a84f0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:header scope="default">\r
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">\r
+         <wsse:UsernameToken wsu:Id="UsernameToken-1">\r
+            <wsse:Username>WSAPN</wsse:Username>\r
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">M0ZBQkJFRjktQUUwQi00NEY2LUEzMDEtMUY4NDBCMzIwRjM2tY8YW2wBPdKyEYkwGDlAmSw+8kU=</wsse:Password>\r
+         </wsse:UsernameToken>\r
+      </wsse:Security>\r
+   </soapenv:header>\r
+   <soapenv:Body>\r
+      <ent:obtenerResultadoSincronizacionTablas>\r
+         <idEntidad>70</idEntidad>\r
+         <idProcesoSincronizacion>1</idProcesoSincronizacion>\r
+      </ent:obtenerResultadoSincronizacionTablas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:obtenerResultadoSincronizacionTablas"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9b613c1f-a92c-4a32-a171-33316016aa7c" isOneWay="false" action="urn:obtenerTransaccionesPendientes" name="obtenerTransaccionesPendientes" bindingOperationName="obtenerTransaccionesPendientes" type="Request-Response" outputName="obtenerTransaccionesPendientesResponse" inputName="obtenerTransaccionesPendientes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b71206da-b214-44c2-b56b-ebbc58d7ef06" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+    <soapenv:header scope="default">
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-1">
+            <wsse:Username>WSAPN</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">M0ZBQkJFRjktQUUwQi00NEY2LUEzMDEtMUY4NDBCMzIwRjM2tY8YW2wBPdKyEYkwGDlAmSw+8kU=</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:header>
+
+   <soapenv:Body>\r
+      <ent:obtenerTransaccionesPendientes>\r
+         <!--Optional:-->\r
+         <idEntidad>75</idEntidad>\r
+      </ent:obtenerTransaccionesPendientes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:obtenerTransaccionesPendientes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f50a3fff-3def-408c-9571-5bba7c651bff" isOneWay="false" action="urn:obtenerTransaccionesPendientesConLimite" name="obtenerTransaccionesPendientesConLimite" bindingOperationName="obtenerTransaccionesPendientesConLimite" type="Request-Response" outputName="obtenerTransaccionesPendientesConLimiteResponse" inputName="obtenerTransaccionesPendientesConLimite" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a94c5864-7a65-4213-94cb-51208b08a266" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+    <soapenv:header scope="default">
+      <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken wsu:Id="UsernameToken-1">
+            <wsse:Username>WSAPN</wsse:Username>
+            <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">M0ZBQkJFRjktQUUwQi00NEY2LUEzMDEtMUY4NDBCMzIwRjM2tY8YW2wBPdKyEYkwGDlAmSw+8kU=</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soapenv:header>
+
+   <soapenv:Body>\r
+      <ent:obtenerTransaccionesPendientesConLimite>\r
+         <!--Optional:-->\r
+         <idEntidad>70</idEntidad>\r
+         <!--Zero or more repetitions:-->\r
+         <tipoTransacciones>N1</tipoTransacciones>\r
+         <!--Optional:-->\r
+         <limite>1</limite>\r
+      </ent:obtenerTransaccionesPendientesConLimite>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:obtenerTransaccionesPendientesConLimite"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e5d97cd0-5adb-4ff7-93d7-4d3ccb828442" isOneWay="false" action="urn:sincronizarTablas" name="sincronizarTablas" bindingOperationName="sincronizarTablas" type="Request-Response" outputName="sincronizarTablasResponse" inputName="sincronizarTablas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="83e6976c-21cf-49ed-8617-9800a284ad75" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://200.62.224.217/vucent/services/VucentWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ent="http://entidad.ws.remoting.ve.vuce.mincetur.gob.pe/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ent:sincronizarTablas>\r
+         <idEntidad>?</idEntidad>\r
+         <!--Optional:-->\r
+         <xmlMensaje>cid:1063619502094</xmlMensaje>\r
+         <!--Optional:-->\r
+         <xmlTablas>cid:32074227310</xmlTablas>\r
+      </ent:sincronizarTablas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:sincronizarTablas"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

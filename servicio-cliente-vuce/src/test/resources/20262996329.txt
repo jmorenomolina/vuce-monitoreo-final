@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<suce xmlns="urn:peru:vuce:data:standard:APN003:1"  xmlns:vct="VUCE_CommonTypes_D08B" xmlns:vram="APNReusableAggregateBusinessInformationEntity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:peru:vuce:data:standard:APN003:1 ..\..\schemas\uncefact\data\standard\apn\suces\apn003.xsd">
+    <DocumentHeader>
+        <vram:PetitionerTradeParty>        	        	
+        	<vct:Name><![CDATA[FARMINDUSTRIA S.A.]]></vct:Name>
+            <vct:IdentificationType>1</vct:IdentificationType>
+            <vct:Identification>20262996329</vct:Identification>            
+            <vct:TradeAddress><vct:StreetName><![CDATA[JR. MARISCAL MILLER NRO. 2151 URB. LOBATON LIMA LIMA LINCE]]></vct:StreetName></vct:TradeAddress>
+            <vct:Ubigeo>150116</vct:Ubigeo>
+            <vct:TelephoneUniversalCommunication><vct:CompleteNumber>4117000</vct:CompleteNumber></vct:TelephoneUniversalCommunication>
+            <vct:FaxUniversalCommunication><vct:CompleteNumber>4701170</vct:CompleteNumber></vct:FaxUniversalCommunication>            
+            <vct:EmailUniversalCommunication><vct:UniformResourceIdentifier><![CDATA[cyshiki@farmindustria.com.pe]]></vct:UniformResourceIdentifier></vct:EmailUniversalCommunication>
+            <vct:MobileTelephoneUniversalCommunication><vct:CompleteNumber></vct:CompleteNumber></vct:MobileTelephoneUniversalCommunication>
+            <vct:Type>2</vct:Type>                                                
+        </vram:PetitionerTradeParty>
+        
+        <vram:PersonTradeParty>        	
+        	<vct:Name><![CDATA[Jos&#233; Carlos Uchima A.]]></vct:Name>
+        	<vct:IdentificationType>1</vct:IdentificationType>
+        	<vct:Identification>20262996329</vct:Identification>        	
+        	<vct:IdentificationAlternativeType>2</vct:IdentificationAlternativeType>
+        	<vct:IdentificationAlternative>.21860083</vct:IdentificationAlternative>        	            
+            <vct:TradeAddress><vct:StreetName><![CDATA[Armando Revoredo 470]]></vct:StreetName></vct:TradeAddress>
+            <vct:Ubigeo>060407</vct:Ubigeo>
+            <vct:TelephoneUniversalCommunication><vct:CompleteNumber>056272567</vct:CompleteNumber></vct:TelephoneUniversalCommunication>
+            <vct:FaxUniversalCommunication><vct:CompleteNumber>3479317</vct:CompleteNumber></vct:FaxUniversalCommunication>
+            <vct:EmailUniversalCommunication><vct:UniformResourceIdentifier><![CDATA[]]></vct:UniformResourceIdentifier></vct:EmailUniversalCommunication>
+            <vct:MobileTelephoneUniversalCommunication><vct:CompleteNumber>984398575</vct:CompleteNumber></vct:MobileTelephoneUniversalCommunication>                            
+            <vct:Role><![CDATA[2]]></vct:Role>    
+        </vram:PersonTradeParty>     
+    </DocumentHeader>
+    
+   <SpecificInformation>
+		<vram:DeclarationFlag>S</vram:DeclarationFlag>			
+		<vram:AgreeFlag></vram:AgreeFlag>
+		<vram:ProcedureType>1</vram:ProcedureType>
+		<vram:MetaProcedure></vram:MetaProcedure>						
+	</SpecificInformation>
+	
+	<Port>
+		<vram:SeaPort>PCH</vram:SeaPort>					
+		<vram:PortScope>1</vram:PortScope>
+		<vram:Category>2</vram:Category>
+		<vram:CompanyType>7</vram:CompanyType>
+	</Port>
+	
+		<InsurancePolicy>
+		<vram:InsuranceType>2</vram:InsuranceType>
+		<vram:InsuranceNumber>1111</vram:InsuranceNumber>
+		<vram:InsuranceName>1</vram:InsuranceName>
+		<vram:InsuranceMount>1212121.0</vram:InsuranceMount>
+		<vram:ExpirationDate>2017-03-24</vram:ExpirationDate>		
+	</InsurancePolicy>
+		
+	<Provider>		
+		<vram:RegisterNumber>6545645645</vram:RegisterNumber>
+		<vram:SocialObject>2</vram:SocialObject>
+		<vram:SocialCapital>111111.0</vram:SocialCapital>
+		<vram:MunicipalLicence>	
+			<vram:LicenceNumber><![CDATA[435435]]></vram:LicenceNumber>
+			<vram:LicenceType>2</vram:LicenceType>
+			<vram:ExpirationDate></vram:ExpirationDate>
+			<vram:ProvidedByTradeParty>					
+				<vct:TradeAddress>
+					<vct:StreetName><![CDATA[Av. Guardia Civil 388 Dpto 103]]></vct:StreetName>
+				</vct:TradeAddress>	
+				<vct:Ubigeo>1325</vct:Ubigeo>			
+				<vct:Reference><![CDATA[]]></vct:Reference>
+			</vram:ProvidedByTradeParty>		
+		</vram:MunicipalLicence>					
+	</Provider>
+	
+        <AttachedDocuments>
+        <vram:AttachedName><![CDATA[(Req-1) A.pdf]]></vram:AttachedName>
+        <vram:DocumentName>1</vram:DocumentName>
+    </AttachedDocuments>
+        <AttachedDocuments>
+        <vram:AttachedName><![CDATA[(Req-3) A.pdf]]></vram:AttachedName>
+        <vram:DocumentName>3</vram:DocumentName>
+    </AttachedDocuments>
+        <AttachedDocuments>
+        <vram:AttachedName><![CDATA[(Req-4) A.pdf]]></vram:AttachedName>
+        <vram:DocumentName>4</vram:DocumentName>
+    </AttachedDocuments>
+    
+        
+</suce>

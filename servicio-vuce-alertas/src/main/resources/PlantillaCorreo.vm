@@ -1,0 +1,105 @@
+<p>Estimados Sres $nombreEntidad</p>
+<p>El sistema VUCE informa que se ha detectado la siguiente Incidencia $codigoAlerta: $descripcionAlerta .</p>
+<p>#if($tipoIncidente==6)</p>
+<table style="border-style: solid;" border="1">
+<tbody>
+<tr style="height: 30px;">
+<td style="height: 30px; width: 219px;">
+<p><strong>Fecha y Hora de inicio</strong></p>
+</td>
+<td style="height: 30px; width: 227px;">
+<p>$fechaHoraInicio</p>
+</td>
+</tr>
+<tr style="height: 46px;">
+<td style="height: 46px; width: 219px;">
+<p><strong>Duraci&oacute;n</strong></p>
+</td>
+<td style="height: 46px; width: 227px;">
+<p>$duracion</p>
+</td>
+</tr>
+<tr style="height: 46px;">
+<td style="height: 46px; width: 219px;">
+<p><strong>Cantidad de transmisiones</strong></p>
+</td>
+<td style="height: 46px; width: 227px;">
+<p>$cantidadTransmisiones</p>
+</td>
+</tr>
+<tr style="height: 46px;">
+<td style="height: 46px; width: 219px;">
+<p><strong>Solicitudes sin Tasa (N2)</strong></p>
+</td>
+<td style="height: 46px; width: 227px;">$cantidadSolicitudesSinTasa</td>
+</tr>
+<tr style="height: 18px;">
+<td style="height: 18px; width: 219px;">
+<p><strong>SUCEs sin Expediente (N7)</strong></p>
+</td>
+<td style="height: 46px; width: 227px;">
+<p>$cantidadSuceSinExpediente</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>#else</p>
+<table border="1" style="border-style: solid;">
+<tbody>
+<tr>
+<td width="219">
+<p><strong>Fecha y Hora de inicio</strong></p>
+</td>
+<td width="227">
+<p>$fechaHoraInicio</p>
+</td>
+</tr>
+<tr>
+<td width="219">
+<p><strong>Duraci&oacute;n</strong></p>
+</td>
+<td width="227">
+<p>$duracion</p>
+</td>
+</tr>
+<tr>
+<td width="219">
+<p><strong>Cantidad de transmisiones</strong></p>
+</td>
+<td width="227">
+<p>$cantidadTransmisiones</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>#foreach( $incidente in $incidentes)#end</p>
+<table style="height: 36px; width: 1348px; border-style: solid;" border="1">
+<tbody>
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 101px;"><strong>Nro</strong></td>
+<td style="text-align: center; height: 18px; width: 160px;"><strong>Transmisi&oacute;n</strong></td>
+<td style="text-align: center; height: 18px; width: 185px;"><strong>Tipo de documento</strong></td>
+<td style="text-align: center; height: 18px; width: 225px;"><strong>Nro. de documento</strong></td>
+<td style="text-align: center; height: 18px; width: 228px;"><strong>Fecha y hora generaci&oacute;n</strong></td>
+<td style="text-align: center; height: 18px; width: 218px;"><strong>Antiguedad</strong></td>
+<td style="text-align: center; width: 185px; height: 18px;"><strong>Log error</strong></td>
+</tr>
+#foreach( $incidente in $incidentes)
+<tr style="height: 18px;">
+<td style="text-align: center; height: 18px; width: 101px;">$incidente.nro</td>
+<td style="text-align: center; height: 18px; width: 160px;">$incidente.transmision</td>
+<td style="text-align: center; height: 18px; width: 185px;">$incidente.tipoDocumento</td>
+<td style="text-align: center; height: 18px; width: 225px;">$incidente.numeroDocumento</td>
+<td style="text-align: center; height: 18px; width: 228px;">$incidente.fechaHoraGeneracion</td>
+<td style="text-align: center; height: 18px; width: 218px;">$incidente.antiguedad</td>
+<td style="text-align: center; width: 185px; height: 18px;">$incidente.logError</td>
+</tr>
+#end
+</tbody>
+</table>
+<p>#end</p>
+<p>Atentamente,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>VUCE</p>
+<p>Aviso de Confidencialidad: Este correo electr&oacute;nico y/o el material adjunto es para uso exclusivo de la persona o entidad a la que expresamente se le ha enviado, y puede contener informaci&oacute;n confidencial o material privilegiado&nbsp; &nbsp; &nbsp; &nbsp;</p>
+<p>Este correo electr&oacute;nico fue enviado por la <u>VUCE</u>.</p>
