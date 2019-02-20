@@ -1,0 +1,219 @@
+/*body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+#starterDiv{
+  padding-top: 3%;
+}
+
+.CodeMirror { 
+  text-align: left; 
+  height: auto !important;
+}
+*/
+
+
+ul.head-list-table{
+	
+	
+}
+
+ul.head-list-table li {
+	display: inline-block;
+	padding-right: 15px;
+	margin-top: 10px;
+	
+}
+
+.tipo-transacciones{
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    margin: 0px auto;
+    border-radius: 50px;
+}
+
+
+.border-radius{  
+    border-radius: 50px;
+    width: 17px;
+    height: 17px;
+}
+
+.tipo-transacciones-0{  
+    background-color: #99ffb8;
+    border: 2px solid #99ffb8;
+}
+
+
+.tipo-transacciones-1{
+    background-color: #524cb1;
+    border: 2px solid #524cb1; 
+}
+
+.tipo-transacciones-2{
+    background-color: #d60451;
+    border: 2px solid #d60451;
+}
+
+.tipo-transacciones-5{
+    background-color: #393b3e;
+    border: 2px solid #393b3e;
+}
+
+
+.tipo-transacciones-3{
+   background-color: #d60451;
+    border: 2px solid #d60451;
+}
+
+.tipo-transacciones-4{
+    
+    
+   background-color: #9959ae;
+    border: 2px solid #9959ae;
+}
+
+
+.en-actividad-rojo{
+	background-color: #ff0d0d;
+    border: 2px solid #ff0d0d;
+	
+}
+
+.en-actividad-verde{
+	background-color: #3fb50f;
+    border: 2px solid #3fb50f;
+	
+}
+
+
+
+.tipo-frecuencia-0{
+    width: 20px;
+    height: 20px;
+    background-color: #88e282;
+    border: 2px solid #88e282;
+    border-radius: 50px;
+    margin: 0px auto;
+    display: block;
+}
+
+.tipo-frecuencia-1{
+    width: 20px;
+    height: 20px;
+    background-color: #f53d3d;
+    border: 2px solid #f53d3d;
+    border-radius: 50px;
+    margin: 0px auto;
+    display: block;
+}
+
+.tipo-frecuencia-cumplimiento-1{
+    width: 20px;
+    height: 20px;
+    background-color: #88e282;
+    border: 2px solid #88e282;
+    border-radius: 50px;
+    margin: 0px auto;
+    display: block;
+}
+
+.tipo-frecuencia-cumplimiento-0{
+    width: 20px;
+    height: 20px;
+    background-color: #f53d3d;
+    border: 2px solid #f53d3d;
+    border-radius: 50px;
+    margin: 0px auto;
+    display: block;
+}
+
+.operaciones-red{
+    color: #ef6161;
+    font-weight: bold;
+}
+
+.top-5{
+    top: 5px;
+}
+
+.padding-bottom-10{
+    padding-bottom: 10px;
+}
+
+
+.dataTables_info{
+    width: 41.66666667%;
+    float: left;
+    margin-top: 10px;
+}
+
+.dataTables_paginate{
+    width: 58.33333333%;
+    float: left;
+    margin-top: 10px !important;
+}
+
+.paginate_button{
+    position: relative;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.current{
+        z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.dataTables_paginate a.disabled,
+.dataTables_paginate a:focus, 
+.dataTables_paginate a:hover.disabled 
+.dataTables_paginate span.disabled
+.dataTables_paginate span:focus.disabled,
+.dataTables_paginate span:hover.disabled {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+
+.d-flex{
+	display: flex;
+	
+}
+
+
+.margin-left-10{
+  margin-left: 10px;
+}
+
+.margin-top-10{
+  margin-top: 10px;
+}
+
+.input-sla{
+	width: 60px;
+    height: 30px;
+    text-align: center;
+}
+
+table#tb-frecuencia-lectura tbody tr td,
+table#tb-configurar-sla tbody tr td,
+table#tb-transmisiones-salida tbody tr td,
+table#tb-transmisiones-entrada tbody tr td,
+table#tb-mantenimiento-entidad tbody tr td
+{
+	text-align: center;
+}
+	

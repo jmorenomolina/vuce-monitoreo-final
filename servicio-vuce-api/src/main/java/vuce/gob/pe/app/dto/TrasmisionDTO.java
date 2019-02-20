@@ -30,7 +30,7 @@ public class TrasmisionDTO {
 	private Date fechaRegistroEntrada;
 	private Date fechaActualizacionEntrada;
 	private Integer antiguedadEntrada;
-	
+	private String adicional;
 	
 	
 	public Integer getEstadoVc() {
@@ -190,6 +190,13 @@ public class TrasmisionDTO {
 		this.antiguedadEntrada = antiguedadEntrada;
 	}
 	
+	
+	public String getAdicional() {
+		return adicional;
+	}
+	public void setAdicional(String adicional) {
+		this.adicional = adicional;
+	}
 	@Override
 	public String toString() {
 		return "TrasmisionDTO [tipo=" + tipo + ", tieneIncidente=" + tieneIncidente + ", tipoIncidente=" + tipoIncidente

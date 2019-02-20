@@ -10,7 +10,7 @@ public class Converter {
 		SimpleDateFormat sf = new SimpleDateFormat(pattern);
 		Date date = null;
 		try {
-			if (fecha != null && fecha !="") {
+			if (fecha != null && fecha != "") {
 				date = sf.parse(fecha);
 			}
 		} catch (ParseException e) {
@@ -18,5 +18,7 @@ public class Converter {
 		}
 		return date;
 	}
+
+
 
 }

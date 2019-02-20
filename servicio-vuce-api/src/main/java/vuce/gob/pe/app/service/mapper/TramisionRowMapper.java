@@ -34,6 +34,14 @@ public class TramisionRowMapper  implements RowMapper<TrasmisionDTO> {
 		byte[] requestXmlData = lobHandler.getBlobAsBytes(rs,"ADJUNTO_MENSAJE");
 		if(requestXmlData!=null) {
 			transmision.setXml(new String(requestXmlData));
+			if("N45".equals(transmision.getTipoMensaje())) {
+				String adicional = UtilRow.getTablesN45(transmision.getXml());
+				transmision.setAdicional(adicional);
+			}else if("N44".equals(transmision.getTipoMensaje())) {
+				String adicional = UtilRow.getTablesN44(transmision.getXml());
+				transmision.setAdicional(adicional);				
+			}
+			
 		}
 	
 		byte[] requestEbxmlData = lobHandler.getBlobAsBytes(rs,"ADJUNTO_EBXML");
